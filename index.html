@@ -52,7 +52,7 @@
   header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 15px 5%;
+    padding: 10px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,13 +63,13 @@
   }
   
   .logo-container { display: flex; align-items: center; gap: 12px; }
-  .lrt-logo-box {
-    background: var(--primary);
-    color: white;
-    font-weight: 800;
-    font-size: 20px;
-    padding: 6px 12px;
-    border-radius: 8px;
+  
+  /* Logo Image Styling */
+  .header-logo {
+    height: 45px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
   }
 
   nav { background: var(--primary); text-align: center; }
@@ -99,12 +99,10 @@
   h2 { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 40px; position: relative; }
   h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); display: block; margin: 10px auto; border-radius: 2px; }
 
-  /* Process Section */
   .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 20px; }
   .process-step { background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); }
   .process-step b { color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px; }
 
-  /* Cards */
   .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
   .card {
     background: var(--card-bg);
@@ -151,7 +149,6 @@
 
   .qr-box { background: white; padding: 20px; border-radius: 16px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
   
-  /* Order Steps Style */
   .order-steps { 
     background: var(--primary); color: white; padding: 40px; border-radius: 20px; margin-bottom: 40px; text-align: left;
   }
@@ -168,7 +165,7 @@
 
 <header>
   <div class="logo-container">
-    <div class="lrt-logo-box">LRT</div>
+    <img src="logo.png" alt="LRT Logo" class="header-logo">
     <div style="font-weight: 700; color: var(--primary); font-size: 1.2rem;">Lakshya Coding</div>
   </div>
 </header>
@@ -276,7 +273,6 @@
 
 <section id="payment" style="background:#f1f5f9;">
   <h2>Purchase & Payment</h2>
-  
   <div style="max-width: 600px; margin: 0 auto;">
     <div class="order-steps">
       <h3>Follow these steps to get Full Version:</h3>
