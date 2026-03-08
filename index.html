@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Result Software 2025-26 | Professional Automation Tools</title>
+    <title>School Result Software 2025-26</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #0f172a;
             --accent: #3b82f6;
-            --text-light: #64748b;
             --white: #ffffff;
             --bg-light: #f8fafc;
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         [data-theme="dark"] {
             --primary: #f8fafc;
-            --accent: #60a5fa;
-            --text-light: #94a3b8;
             --white: #0f172a;
             --bg-light: #1e293b;
         }
@@ -27,212 +23,163 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
         body {
-            background-color: var(--bg-light);
+            background: var(--bg-light);
             color: var(--primary);
-            line-height: 1.6;
+            font-family: sans-serif;
+            text-align: center;
         }
 
         header {
             background: var(--white);
-            padding: 1rem 5%;
+            padding: 15px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .logo {
             height: 50px;
-            width: auto;
-            border-radius: 8px;
+            border-radius: 5px;
         }
 
-        .theme-btn {
-            background: none;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            padding: 8px 15px;
-            border-radius: 20px;
+        .theme-toggle {
             cursor: pointer;
-            font-weight: 600;
+            padding: 10px;
+            border-radius: 50%;
+            border: 1px solid var(--accent);
+            color: var(--accent);
         }
 
         .hero {
-            padding: 4rem 5%;
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: #0f172a;
             color: white;
-            margin-bottom: 3rem;
+            padding: 50px 20px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 5% 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
         }
 
         .card {
             background: var(--white);
-            padding: 2rem;
+            padding: 20px;
             border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(0,0,0,0.05);
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .btn {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            margin-top: 1.5rem;
-            font-weight: 600;
+            margin-top: 15px;
         }
 
-        /* FIX: PAYMENT SECTION COLORS */
-        .payment-section {
+        /* THE FIX FOR DARK MODE TEXT */
+        .buy-section {
+            padding: 40px;
+            margin: 20px;
             background: var(--white);
-            padding: 3rem 5%;
-            margin: 2rem 5%;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
+            border-radius: 15px;
         }
 
-        .upi-id {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent); /* This stays blue/visible */
-            margin: 1rem 0;
-            display: block;
+        .buy-section h2, .buy-section p, .buy-section li {
+            color: var(--primary) !important; /* Forces visibility in Dark Mode */
         }
 
-        .payment-instruction {
-            color: var(--primary) !important; /* Force visibility in both modes */
-            font-weight: 500;
-            margin-bottom: 1.5rem;
+        .upi-text {
+            font-weight: bold;
+            color: #3b82f6 !important;
+            font-size: 1.2rem;
         }
 
         footer {
+            padding: 20px;
             background: #0f172a;
             color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
-        <img src="lrt-logo.png.jpg" alt="Lakshya Logo" class="logo">
-        <h2 style="color: var(--accent)">LRT Software</h2>
-    </div>
-    <button class="theme-btn" id="theme-toggle">
-        <i class="fas fa-moon"></i> Mode
-    </button>
+    <img src="lrt-logo.png.jpg" alt="Logo" class="logo">
+    <h2>LRT Software</h2>
+    <div class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></div>
 </header>
 
 <section class="hero">
     <h1>School Result Software 2025-26</h1>
-    <p>Professional Automated Excel Tools for Modern Schools</p>
+    <p>Professional Examination & Result Automation Tools</p>
+    <p>Developed by Lakshya Coding Training Centre</p>
 </section>
 
 <div class="grid">
     <div class="card">
-        <i class="fas fa-file-excel fa-3x" style="color: #22c55e"></i>
         <h3>LKG & UKG</h3>
-        <p>Annual Result Sheet Automation</p>
         <a href="Demo LKG & UKG Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
     </div>
-
     <div class="card">
-        <i class="fas fa-file-excel fa-3x" style="color: #3b82f6"></i>
         <h3>Class 1st & 2nd</h3>
-        <p>Comprehensive Grade Management</p>
         <a href="Demo 1st & 2nd Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
     </div>
-
     <div class="card">
-        <i class="fas fa-file-excel fa-3x" style="color: #f59e0b"></i>
         <h3>Class 9th</h3>
-        <p>Advanced Calculation System</p>
         <a href="Demo 9th Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
     </div>
-
     <div class="card">
-        <i class="fas fa-file-excel fa-3x" style="color: #ef4444"></i>
         <h3>Class 11th</h3>
-        <p>High School Stream Management</p>
         <a href="Demo 11th Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
+    </div>
+    <div class="card">
+        <h3>Class 3rd & 4th</h3>
+        <a href="Demo 3rd & 4th Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
+    </div>
+    <div class="card">
+        <h3>Class 6th & 7th</h3>
+        <a href="Demo 6th & 7th Annual Result Sheet 2025-26.xlsb" class="btn">Download Demo</a>
     </div>
 </div>
 
-<section class="payment-section">
-    <h2>How to Buy Full Version</h2>
-    <p class="payment-instruction">Scan UPI QR or pay directly to the ID below:</p>
-    <span class="upi-id">devrai1782@okaxis</span>
-    <p class="payment-instruction">After payment, send the screenshot to our WhatsApp to receive the unlocked files instantly.</p>
-    <a href="https://wa.me/918319942987" class="btn" style="background: #25d366;">
-        <i class="fab fa-whatsapp"></i> Send Screenshot
-    </a>
+<section class="buy-section">
+    <h2>🚀 How to Buy the Full Version</h2>
+    <p>1. Scan the UPI QR Code on our website to pay.</p>
+    <p>2. Send the Payment Screenshot to our WhatsApp: <strong>+91 8319942987</strong></p>
+    <p>3. Receive the Unlocked Full Version instantly.</p>
+    <p class="upi-text">UPI ID: devrai1782@okaxis</p>
+    <a href="https://wa.me/918319942987" class="btn" style="background:#25d366"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
 </section>
 
 <footer>
-    <p>&copy; 2025 Lakshya Coding Training Centre. All rights reserved.</p>
-    <div class="social-links">
-        <a href="mailto:devrai1782@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/918319942987"><i class="fab fa-whatsapp"></i></a>
-    </div>
+    <p>Contact: devrai1782@gmail.com</p>
+    <p>&copy; 2025 Lakshya Coding Training Centre</p>
 </footer>
 
 <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const icon = themeToggle.querySelector('i');
-
-    themeToggle.addEventListener('click', () => {
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            icon.className = 'fas fa-moon';
+    const btn = document.getElementById('theme-btn');
+    btn.onclick = () => {
+        if (document.body.hasAttribute('data-theme')) {
+            document.body.removeAttribute('data-theme');
+            btn.innerHTML = '<i class="fas fa-moon"></i>';
         } else {
-            body.setAttribute('data-theme', 'dark');
-            icon.className = 'fas fa-sun';
+            document.body.setAttribute('data-theme', 'dark');
+            btn.innerHTML = '<i class="fas fa-sun"></i>';
         }
-    });
+    }
 </script>
 
 </body>
